@@ -5,6 +5,9 @@ The Brazil team has requested if it would be possible to automate this process i
 
 ## Metadata
 customer_name: customer's name
+
 message_date: date of message send
+
 carrier_name: name of the carrier
+
 volume: total messages sent
