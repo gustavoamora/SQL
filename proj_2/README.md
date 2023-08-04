@@ -1,7 +1,10 @@
-### Context
+## Contexto
+In a messaging company, the sales team is in need of assistance with customer information. They often need to understand the distribution of their customers' message sends by carrier. Currently, they extract data from a Business Intelligence team's dashboard and perform calculations in spreadsheets to accomplish this task.
 
-Em uma empresa de mensageria o time comercial está precisando de uma ajuda com informações de seus clientes. 
-Com frequência eles precisam entender qual é a distribuição dos envios das mensagens de seus clientes por operadora. 
-Hoje para realizar essa tarefa eles extraem os dados provenientes de um dash da equipe de BI e fazem os cálculos em planilhas.
+The Brazil team has requested if it would be possible to automate this process in some way, as they were spending too much time on it and the numbers were often unreliable.
 
-O time do Brasil solicitou então se seria possível automatizar de alguma forma esse trabalho já que estavam gastando tempo demais com isso e os números muitas vezes não eram confiáveis.
+## Metadata
+customer_name: customer's name
+message_date: date of message send
+carrier_name: name of the carrier
+volume: total messages sent
