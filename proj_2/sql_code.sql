@@ -1,7 +1,7 @@
 WITH last_month AS (
   SELECT 
       customer_name,
-      SUM(mt_total) AS total_last_month
+      SUM(sms_sent) AS volume_last_month
   FROM
       my_table
   WHERE
@@ -15,8 +15,8 @@ SELECT
     v.customer_name,
     v.carrier_name,
     MAX(v.message_date) AS message_date,
-    SUM(v.mt_total) AS mt_total,
-    ROUND(100 * SUM(v.mt_total) / t.total_last_month, 2) AS percentual_volume
+    SUM(v.sms_sent) AS sms_sent,
+    ROUND(100 * SUM(v.sms_sent) / t.volume_last_month, 2) AS percentual_volume
 FROM
     my_table v
 JOIN
@@ -24,9 +24,9 @@ JOIN
 ON
     v.customer_name = t.customer_name
 WHERE
-    v.message_date >= DATE_SUB(DATE_TRUNC(CURRENT_DATE(), MONTH), INTERVAL 1 MONTH) 
-    AND v.message_date < DATE_TRUNC(CURRENT_DATE(), MONTH) 
+    v.message_date >= DATE_SUB(DATE_TRUNC(CURRENT_DATE(), MONTH), INTERVAL 1 MONTH) -- primeiro dia do mês anterior
+    AND v.message_date < DATE_TRUNC(CURRENT_DATE(), MONTH) -- primeiro dia do mês atual
 GROUP BY
     v.customer_name,
     v.carrier_name,
-    t.total_last_month;
+    t.volume_last_month;
