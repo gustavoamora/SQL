@@ -24,8 +24,8 @@ JOIN
 ON
     v.customer_name = t.customer_name
 WHERE
-    v.message_date >= DATE_SUB(DATE_TRUNC(CURRENT_DATE(), MONTH), INTERVAL 1 MONTH) -- primeiro dia do mês anterior
-    AND v.message_date < DATE_TRUNC(CURRENT_DATE(), MONTH) -- primeiro dia do mês atual
+    v.message_date >= DATE_SUB(DATE_TRUNC(CURRENT_DATE(), MONTH), INTERVAL 1 MONTH) 
+    AND v.message_date < DATE_TRUNC(CURRENT_DATE(), MONTH) 
 GROUP BY
     v.customer_name,
     v.carrier_name,
