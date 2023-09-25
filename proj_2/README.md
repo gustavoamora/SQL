@@ -3,7 +3,7 @@ In a messaging company, the sales team is in need of assistance with customer in
 
 The Brazil team has requested if it would be possible to automate this process in some way, as they were spending too much time on it and the numbers were often unreliable.
 
-## Metadata
+## Features:
 customer_name: customer's name
 
 message_date: date of message send
